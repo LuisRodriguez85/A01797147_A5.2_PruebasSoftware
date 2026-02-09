@@ -1,0 +1,14 @@
+[
+    {
+        "Product": "Apple",
+        "Quantity": 3
+    },
+    {
+        "Product": "Banana",
+        "Quantity": 4
+    },
+    {
+        "Product": "Orange",
+        "Quantity": 2
+    }
+]
