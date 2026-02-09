@@ -34,3 +34,25 @@ Se verificó la instalación correcta de la herramienta de análisis estático *
 ```bash
 python -m flake8 --version
 
+Obteniendo la versión 7.3.0, junto con los módulos pycodestyle, pyflakes y mccabe, lo cual confirma que la herramienta está lista para analizar código fuente Python conforme al estándar PEP-8 y detectar problemas de calidad estática.
+
+Durante el análisis se detectaron advertencias relacionadas con la longitud de línea y el formato del archivo, las cuales fueron corregidas. Posteriormente, el análisis se ejecutó nuevamente sin detectar errores ni advertencias.
+
+Los resultados del análisis se almacenaron en la carpeta results.
+
+Análisis Estático – Pylint
+
+Se ejecutó la herramienta Pylint sobre el archivo compute_sales.py.
+Inicialmente se detectó una advertencia de convención relacionada con el nombre del módulo.
+
+Después de corregir el nombre del archivo conforme al estándar snake_case, el análisis se ejecutó nuevamente sin observaciones, obteniendo una calificación final de:
+
+10.00 / 10
+
+El resultado del análisis se almacenó en el archivo correspondiente dentro de la carpeta results.
+
+Conclusión
+
+El programa fue validado mediante pruebas dinámicas y análisis estático.
+Las herramientas Flake8 y Pylint no detectaron errores ni advertencias tras la corrección de los hallazgos iniciales, confirmando el cumplimiento del estándar PEP-8 y la correcta aplicación de buenas prácticas de calidad de software.
+
