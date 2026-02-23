@@ -1,5 +1,5 @@
-{
-    "Apple": 10.0,
-    "Banana": 5.0,
-    "Orange": 7.5
-}
+[
+  {"Product": "Apple", "Price": 10.0},
+  {"Product": "Banana", "Price": 5.0},
+  {"Product": "Orange", "Price": 7.5}
+]

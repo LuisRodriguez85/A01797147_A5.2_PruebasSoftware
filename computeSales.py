@@ -20,6 +20,35 @@ def load_json_file(file_path):
         return None
 
 
+def normalize_catalogue(price_catalogue):
+    """
+    Normalizes the catalogue structure.
+
+    Supports:
+    1) Dictionary format:
+       {"Apple": 10.0}
+
+    2) List format:
+       [{"Product":"Apple","Price":10.0}]
+    """
+    normalized = {}
+
+    # Case 1: already dictionary
+    if isinstance(price_catalogue, dict):
+        return price_catalogue
+
+    # Case 2: list of dictionaries
+    if isinstance(price_catalogue, list):
+        for item in price_catalogue:
+            product = item.get("Product")
+            price = item.get("Price")
+
+            if product is not None and isinstance(price, (int, float)):
+                normalized[product] = price
+
+    return normalized
+
+
 def compute_total_sales(price_catalogue, sales_records):
     """Computes total sales amount."""
     total = 0.0
@@ -47,9 +76,9 @@ def main():
 
     if len(sys.argv) != 3:
         print(
-              "Usage: python computeSales.py priceCatalogue.json "
-              "salesRecord.json"
-             )
+            "Usage: python computeSales.py priceCatalogue.json "
+            "salesRecord.json"
+        )
         sys.exit(1)
 
     price_catalogue_file = sys.argv[1]
@@ -60,6 +89,9 @@ def main():
 
     if price_catalogue is None or sales_records is None:
         sys.exit(1)
+
+    # 🔧 FIX IMPORTANTE
+    price_catalogue = normalize_catalogue(price_catalogue)
 
     total_sales = compute_total_sales(price_catalogue, sales_records)
 
